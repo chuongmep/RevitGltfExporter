@@ -6,14 +6,6 @@ using Autodesk.Revit.Utility;
 #else
 using Autodesk.Revit.DB.Visual;
 #endif
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 
 //mtl 文件使用的关键字

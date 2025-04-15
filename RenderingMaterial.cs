@@ -230,36 +230,13 @@ namespace RevitGltfExporter
         }
 #endif
 
-#if REVIT2016 || REVIT2017 || REVIT2018 || REVIT2019 || REVIT2020
-        static private double readPropertyValue(AssetPropertyDistance property)
-        {
-            //return UnitUtils.Convert(property.Value, property.DisplayUnitType, DisplayUnitType.DUT_CENTIMETERS);
-            return UnitUtils.ConvertToInternalUnits(property.Value, property.DisplayUnitType);
-        }
-#else
+
         static private double readPropertyValue(AssetPropertyDistance property)
         {
             //return UnitUtils.Convert(property.Value, property.GetUnitTypeId(), UnitTypeId.Centimeters);
             return UnitUtils.ConvertToInternalUnits(property.Value, property.GetUnitTypeId());
         }
-#endif
 
-#if REVIT2016 || REVIT2017 || REVIT2018
-        private AssetProperty findPropertyByName(string name)
-        {
-            return this.asset[name];
-        }
-
-        private AssetProperty findPropertyByName(Asset asset, string name)
-        {
-            return asset[name];
-        }
-
-        static private Asset findConnectedPropertyByName(AssetProperty asset, string name)
-        {
-            return (Asset)asset.GetConnectedProperty(name);
-        }
-#else
         private AssetProperty findPropertyByName(string name)
         {
             return this.asset.FindByName(name);
@@ -274,7 +251,6 @@ namespace RevitGltfExporter
         {
             return (Asset)asset.GetAllConnectedProperties().Where(property => property.Name.Equals(name)).FirstOrDefault();
         }
-#endif
     }
 
     public class Texture

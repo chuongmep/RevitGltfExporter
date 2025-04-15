@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RevitElement = Autodesk.Revit.DB.Element;
 
 namespace RevitGltfExporter
@@ -65,11 +63,8 @@ namespace RevitGltfExporter
                                 break;
 
                             case StorageType.Integer:
-#if REVIT2016 || REVIT2017 || REVIT2018 || REVIT2019 || REVIT2020 || REVIT2021
-                                if (ParameterType.YesNo == p.Definition.ParameterType)
-#else
                         if (SpecTypeId.Boolean.YesNo == p.Definition.GetDataType())
-#endif
+
                                 {
                                     if (p.AsInteger() == 0)
                                     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RevitGltfExporter
+﻿namespace RevitGltfExporter
 {
     public interface IAssetSchema
     {

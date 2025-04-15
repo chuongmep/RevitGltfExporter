@@ -2,12 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using RevitElement = Autodesk.Revit.DB.Element;
-using System.Threading;
 
 namespace RevitGltfExporter
 {
